@@ -22,6 +22,20 @@ jobs:
       - name: Test oqsprovider
         run: ctest --parallel 5 --test-dir _build
 
+  macos_m1:
+    runs-on: macos-14
+    strategy:
+      fail-fast: false
+    steps:
+      - name: Install prerequisites
+        run: brew install liboqs
+      - name: Checkout oqsprovider code
+        uses: actions/checkout@v2
+      - name: Build oqsprovider
+        run: cmake -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl@3 -S . -B _build && cmake --build _build
+      - name: Test oqsprovider
+        run: ctest --parallel 5 --test-dir _build
+
   linux_intel:
     runs-on: ubuntu-latest
     strategy:
