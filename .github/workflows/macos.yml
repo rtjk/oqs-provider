@@ -43,7 +43,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: .localopenssl32
-          key: ${{ runner.os }}-openssl32
+          key: ${{ runner.os }}-${{ runner.arch }}-openssl32
       - name: Build openssl3 if not cached
         if: steps.cache-openssl32.outputs.cache-hit != 'true'
         run: pwd && ./config --prefix=`pwd`/../.localopenssl32 && make $MAKE_PARAMS && make install_sw install_ssldirs
@@ -55,7 +55,7 @@ jobs:
         with:
           path: |
             .localopenssl32
-          key: ${{ runner.os }}-openssl32
+          key: ${{ runner.os }}-${{ runner.arch }}-openssl32
       - name: build liboqs
         run: |
            cmake -DOPENSSL_ROOT_DIR=../.localopenssl32 -DCMAKE_INSTALL_PREFIX=../.localliboqs ${{ matrix.params.oqsconfig }} -S . -B _build 
