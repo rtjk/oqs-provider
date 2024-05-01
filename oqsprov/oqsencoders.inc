@@ -857,4 +857,13 @@ ENCODER_w_structure("rsa3072_sphincsshake128fsimple", rsa3072_sphincsshake128fsi
 ENCODER_w_structure("rsa3072_sphincsshake128fsimple", rsa3072_sphincsshake128fsimple, pem, SubjectPublicKeyInfo),
 ENCODER_TEXT("rsa3072_sphincsshake128fsimple", rsa3072_sphincsshake128fsimple),
 #endif
+#ifdef OQS_ENABLE_SIG_cross_rsdp_128_balanced
+ENCODER_w_structure("crossrsdp128balanced", crossrsdp128balanced, der, PrivateKeyInfo),
+ENCODER_w_structure("crossrsdp128balanced", crossrsdp128balanced, pem, PrivateKeyInfo),
+ENCODER_w_structure("crossrsdp128balanced", crossrsdp128balanced, der, EncryptedPrivateKeyInfo),
+ENCODER_w_structure("crossrsdp128balanced", crossrsdp128balanced, pem, EncryptedPrivateKeyInfo),
+ENCODER_w_structure("crossrsdp128balanced", crossrsdp128balanced, der, SubjectPublicKeyInfo),
+ENCODER_w_structure("crossrsdp128balanced", crossrsdp128balanced, pem, SubjectPublicKeyInfo),
+ENCODER_TEXT("crossrsdp128balanced", crossrsdp128balanced),
+#endif
 ///// OQS_TEMPLATE_FRAGMENT_MAKE_END

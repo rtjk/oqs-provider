@@ -1,5 +1,6 @@
 | Algorithm                                         | Implementation Version                        | NIST round   |   Claimed NIST Level | Code Point   | OID                      |
 |:--------------------------------------------------|:----------------------------------------------|:-------------|---------------------:|:-------------|:-------------------------|
+| crossrsdp128balanced                              | 2.1                                           | 3            |                    1 | 0xfeee       | 1.2.3.4.5.6.7.8.9.0      |
 | dilithium2                                        | 3.1                                           | 3            |                    2 | 0xfea0       | 1.3.6.1.4.1.2.267.7.4.4  |
 | dilithium2 **hybrid with** p256                   | 3.1                                           | 3            |                    2 | 0xfea1       | 1.3.9999.2.7.1           |
 | dilithium2 **hybrid with** rsa3072                | 3.1                                           | 3            |                    2 | 0xfea2       | 1.3.9999.2.7.2           |

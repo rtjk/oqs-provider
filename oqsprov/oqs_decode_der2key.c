@@ -763,4 +763,6 @@ MAKE_DECODER(, "p256_sphincsshake128fsimple", p256_sphincsshake128fsimple, oqsx,
 MAKE_DECODER(, "p256_sphincsshake128fsimple", p256_sphincsshake128fsimple, oqsx, SubjectPublicKeyInfo);
 MAKE_DECODER(, "rsa3072_sphincsshake128fsimple", rsa3072_sphincsshake128fsimple, oqsx, PrivateKeyInfo);
 MAKE_DECODER(, "rsa3072_sphincsshake128fsimple", rsa3072_sphincsshake128fsimple, oqsx, SubjectPublicKeyInfo);
+MAKE_DECODER(, "crossrsdp128balanced", crossrsdp128balanced, oqsx, PrivateKeyInfo);
+MAKE_DECODER(, "crossrsdp128balanced", crossrsdp128balanced, oqsx, SubjectPublicKeyInfo);
 ///// OQS_TEMPLATE_FRAGMENT_DECODER_MAKE_END

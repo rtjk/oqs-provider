@@ -255,4 +255,8 @@ DECODER_w_structure("sphincsshake128fsimple", der, SubjectPublicKeyInfo, sphincs
 DECODER_w_structure("p256_sphincsshake128fsimple", der, SubjectPublicKeyInfo, p256_sphincsshake128fsimple),DECODER_w_structure("rsa3072_sphincsshake128fsimple", der, PrivateKeyInfo, rsa3072_sphincsshake128fsimple),
 DECODER_w_structure("rsa3072_sphincsshake128fsimple", der, SubjectPublicKeyInfo, rsa3072_sphincsshake128fsimple),
 #endif
+#ifdef OQS_ENABLE_SIG_cross_rsdp_128_balanced
+DECODER_w_structure("crossrsdp128balanced", der, PrivateKeyInfo, crossrsdp128balanced),
+DECODER_w_structure("crossrsdp128balanced", der, SubjectPublicKeyInfo, crossrsdp128balanced),
+#endif
 ///// OQS_TEMPLATE_FRAGMENT_MAKE_END

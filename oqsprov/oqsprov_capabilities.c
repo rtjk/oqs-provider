@@ -306,6 +306,7 @@ static OQS_SIGALG_CONSTANTS oqs_sigalg_list[] = {
     { 0xfec2, 128, TLS1_3_VERSION, 0 },
     { 0xfec3, 128, TLS1_3_VERSION, 0 },
     { 0xfec4, 128, TLS1_3_VERSION, 0 },
+    { 0xfeee, 128, TLS1_3_VERSION, 0 },
 ///// OQS_TEMPLATE_FRAGMENT_SIGALG_ASSIGNMENTS_END
 };
 
@@ -415,6 +416,7 @@ int oqs_patch_codepoints()
    if (getenv("OQS_CODEPOINT_SPHINCSSHAKE128FSIMPLE")) oqs_sigalg_list[45].code_point = atoi(getenv("OQS_CODEPOINT_SPHINCSSHAKE128FSIMPLE"));
    if (getenv("OQS_CODEPOINT_P256_SPHINCSSHAKE128FSIMPLE")) oqs_sigalg_list[46].code_point = atoi(getenv("OQS_CODEPOINT_P256_SPHINCSSHAKE128FSIMPLE"));
    if (getenv("OQS_CODEPOINT_RSA3072_SPHINCSSHAKE128FSIMPLE")) oqs_sigalg_list[47].code_point = atoi(getenv("OQS_CODEPOINT_RSA3072_SPHINCSSHAKE128FSIMPLE"));
+   if (getenv("OQS_CODEPOINT_CROSSRSDP128BALANCED")) oqs_sigalg_list[48].code_point = atoi(getenv("OQS_CODEPOINT_CROSSRSDP128BALANCED"));
 ///// OQS_TEMPLATE_FRAGMENT_CODEPOINT_PATCHING_END
     return 1;
 }
@@ -530,6 +532,9 @@ static const OSSL_PARAM oqs_param_sigalg_list[][12] = {
     OQS_SIGALG_ENTRY(sphincsshake128fsimple, sphincsshake128fsimple, sphincsshake128fsimple, "1.3.9999.6.7.13", 45),
     OQS_SIGALG_ENTRY(p256_sphincsshake128fsimple, p256_sphincsshake128fsimple, p256_sphincsshake128fsimple, "1.3.9999.6.7.14", 46),
     OQS_SIGALG_ENTRY(rsa3072_sphincsshake128fsimple, rsa3072_sphincsshake128fsimple, rsa3072_sphincsshake128fsimple, "1.3.9999.6.7.15", 47),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdp_128_balanced
+    OQS_SIGALG_ENTRY(crossrsdp128balanced, crossrsdp128balanced, crossrsdp128balanced, "1.2.3.4.5.6.7.8.9.0", 48),
 #endif
 ///// OQS_TEMPLATE_FRAGMENT_SIGALG_NAMES_END
 };

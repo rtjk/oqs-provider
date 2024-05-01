@@ -1271,6 +1271,9 @@ static int oqsx_pki_priv_to_der(const void *vxkey, unsigned char **pder)
 # define rsa3072_sphincsshake128fsimple_evp_type       0
 # define rsa3072_sphincsshake128fsimple_input_type      "rsa3072_sphincsshake128fsimple"
 # define rsa3072_sphincsshake128fsimple_pem_type        "rsa3072_sphincsshake128fsimple"
+# define crossrsdp128balanced_evp_type       0
+# define crossrsdp128balanced_input_type      "crossrsdp128balanced"
+# define crossrsdp128balanced_pem_type        "crossrsdp128balanced"
 ///// OQS_TEMPLATE_FRAGMENT_ENCODER_DEFINES_END
 
 /* ---------------------------------------------------------------------- */
@@ -2645,4 +2648,11 @@ MAKE_ENCODER(, rsa3072_sphincsshake128fsimple, oqsx, PrivateKeyInfo, pem);
 MAKE_ENCODER(, rsa3072_sphincsshake128fsimple, oqsx, SubjectPublicKeyInfo, der);
 MAKE_ENCODER(, rsa3072_sphincsshake128fsimple, oqsx, SubjectPublicKeyInfo, pem);
 MAKE_TEXT_ENCODER(, rsa3072_sphincsshake128fsimple);
+MAKE_ENCODER(, crossrsdp128balanced, oqsx, EncryptedPrivateKeyInfo, der);
+MAKE_ENCODER(, crossrsdp128balanced, oqsx, EncryptedPrivateKeyInfo, pem);
+MAKE_ENCODER(, crossrsdp128balanced, oqsx, PrivateKeyInfo, der);
+MAKE_ENCODER(, crossrsdp128balanced, oqsx, PrivateKeyInfo, pem);
+MAKE_ENCODER(, crossrsdp128balanced, oqsx, SubjectPublicKeyInfo, der);
+MAKE_ENCODER(, crossrsdp128balanced, oqsx, SubjectPublicKeyInfo, pem);
+MAKE_TEXT_ENCODER(, crossrsdp128balanced);
 ///// OQS_TEMPLATE_FRAGMENT_ENCODER_MAKE_END

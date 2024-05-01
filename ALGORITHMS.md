@@ -117,6 +117,7 @@ As standardization for these algorithms within TLS is not done, all TLS code poi
 | p521_sphincsshake256fsimple | 0xfecd |No| OQS_CODEPOINT_P521_SPHINCSSHAKE256FSIMPLE
 | sphincsshake256ssimple | 0xfece |No| OQS_CODEPOINT_SPHINCSSHAKE256SSIMPLE
 | p521_sphincsshake256ssimple | 0xfecf |No| OQS_CODEPOINT_P521_SPHINCSSHAKE256SSIMPLE
+| crossrsdp128balanced | 0xfeee |Yes| OQS_CODEPOINT_CROSSRSDP128BALANCED
 <!--- OQS_TEMPLATE_FRAGMENT_IDS_END -->
 
 Changing code points
@@ -207,6 +208,7 @@ adapting the OIDs of all supported signature algorithms as per the table below.
 | p521_sphincsshake256fsimple | 1.3.9999.6.9.11 |No| OQS_OID_P521_SPHINCSSHAKE256FSIMPLE
 | sphincsshake256ssimple | 1.3.9999.6.9.12 |No| OQS_OID_SPHINCSSHAKE256SSIMPLE
 | p521_sphincsshake256ssimple | 1.3.9999.6.9.13 |No| OQS_OID_P521_SPHINCSSHAKE256SSIMPLE
+| crossrsdp128balanced | 1.2.3.4.5.6.7.8.9.0 |Yes| OQS_OID_CROSSRSDP128BALANCED
 
 If [OQS_KEM_ENCODERS](CONFIGURE.md#OQS_KEM_ENCODERS) is enabled the following list is also available:
 
