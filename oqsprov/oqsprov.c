@@ -51,9 +51,9 @@ extern OSSL_FUNC_provider_get_capabilities_fn oqs_provider_get_capabilities;
 
 
 #ifdef OQS_KEM_ENCODERS
-#define OQS_OID_CNT 204
+#define OQS_OID_CNT 238
 #else
-#define OQS_OID_CNT 98
+#define OQS_OID_CNT 132
 #endif
 const char* oqs_oid_alg_list[OQS_OID_CNT] =
 {
@@ -165,7 +165,24 @@ const char* oqs_oid_alg_list[OQS_OID_CNT] =
 "1.3.9999.6.7.13", "sphincsshake128fsimple",
 "1.3.9999.6.7.14" , "p256_sphincsshake128fsimple",
 "1.3.9999.6.7.15" , "rsa3072_sphincsshake128fsimple",
-"1.2.3.4.5.6.7.8.9.0", "crossrsdp128balanced",
+"0.0.0.0.0.0.0.0.0.1", "CROSSrsdp128balanced",
+"0.0.0.0.0.0.0.0.0.2", "CROSSrsdp128fast",
+"0.0.0.0.0.0.0.0.0.3", "CROSSrsdp128small",
+"0.0.0.0.0.0.0.0.0.4", "CROSSrsdp192balanced",
+"0.0.0.0.0.0.0.0.0.5", "CROSSrsdp192fast",
+"0.0.0.0.0.0.0.0.0.6", "CROSSrsdp192small",
+"0.0.0.0.0.0.0.0.0.7", "CROSSrsdp256balanced",
+"0.0.0.0.0.0.0.0.0.8", "CROSSrsdp256fast",
+"0.0.0.0.0.0.0.0.0.9", "CROSSrsdp256small",
+"0.0.0.0.0.0.0.0.0.10", "CROSSrsdpg128balanced",
+"0.0.0.0.0.0.0.0.0.11", "CROSSrsdpg128fast",
+"0.0.0.0.0.0.0.0.0.12", "CROSSrsdpg128small",
+"0.0.0.0.0.0.0.0.0.13", "CROSSrsdpg192balanced",
+"0.0.0.0.0.0.0.0.0.14", "CROSSrsdpg192fast",
+"0.0.0.0.0.0.0.0.0.15", "CROSSrsdpg192small",
+"0.0.0.0.0.0.0.0.0.16", "CROSSrsdpg256balanced",
+"0.0.0.0.0.0.0.0.0.17", "CROSSrsdpg256fast",
+"0.0.0.0.0.0.0.0.0.18", "CROSSrsdpg256small",
 ///// OQS_TEMPLATE_FRAGMENT_ASSIGN_SIG_OIDS_END
 };
 
@@ -291,6 +308,23 @@ if ((envval = getenv("OQS_OID_P521_HQC256"))) oqs_oid_alg_list[104] = envval;
    if ((envval = getenv("OQS_OID_P256_SPHINCSSHAKE128FSIMPLE"))) oqs_oid_alg_list[66+OQS_KEMOID_CNT] = envval;
    if ((envval = getenv("OQS_OID_RSA3072_SPHINCSSHAKE128FSIMPLE"))) oqs_oid_alg_list[68+OQS_KEMOID_CNT] = envval;
    if ((envval = getenv("OQS_OID_CROSSRSDP128BALANCED"))) oqs_oid_alg_list[70+OQS_KEMOID_CNT] = envval;
+   if ((envval = getenv("OQS_OID_CROSSRSDP128FAST"))) oqs_oid_alg_list[72+OQS_KEMOID_CNT] = envval;
+   if ((envval = getenv("OQS_OID_CROSSRSDP128SMALL"))) oqs_oid_alg_list[74+OQS_KEMOID_CNT] = envval;
+   if ((envval = getenv("OQS_OID_CROSSRSDP192BALANCED"))) oqs_oid_alg_list[76+OQS_KEMOID_CNT] = envval;
+   if ((envval = getenv("OQS_OID_CROSSRSDP192FAST"))) oqs_oid_alg_list[78+OQS_KEMOID_CNT] = envval;
+   if ((envval = getenv("OQS_OID_CROSSRSDP192SMALL"))) oqs_oid_alg_list[80+OQS_KEMOID_CNT] = envval;
+   if ((envval = getenv("OQS_OID_CROSSRSDP256BALANCED"))) oqs_oid_alg_list[82+OQS_KEMOID_CNT] = envval;
+   if ((envval = getenv("OQS_OID_CROSSRSDP256FAST"))) oqs_oid_alg_list[84+OQS_KEMOID_CNT] = envval;
+   if ((envval = getenv("OQS_OID_CROSSRSDP256SMALL"))) oqs_oid_alg_list[86+OQS_KEMOID_CNT] = envval;
+   if ((envval = getenv("OQS_OID_CROSSRSDPG128BALANCED"))) oqs_oid_alg_list[88+OQS_KEMOID_CNT] = envval;
+   if ((envval = getenv("OQS_OID_CROSSRSDPG128FAST"))) oqs_oid_alg_list[90+OQS_KEMOID_CNT] = envval;
+   if ((envval = getenv("OQS_OID_CROSSRSDPG128SMALL"))) oqs_oid_alg_list[92+OQS_KEMOID_CNT] = envval;
+   if ((envval = getenv("OQS_OID_CROSSRSDPG192BALANCED"))) oqs_oid_alg_list[94+OQS_KEMOID_CNT] = envval;
+   if ((envval = getenv("OQS_OID_CROSSRSDPG192FAST"))) oqs_oid_alg_list[96+OQS_KEMOID_CNT] = envval;
+   if ((envval = getenv("OQS_OID_CROSSRSDPG192SMALL"))) oqs_oid_alg_list[98+OQS_KEMOID_CNT] = envval;
+   if ((envval = getenv("OQS_OID_CROSSRSDPG256BALANCED"))) oqs_oid_alg_list[100+OQS_KEMOID_CNT] = envval;
+   if ((envval = getenv("OQS_OID_CROSSRSDPG256FAST"))) oqs_oid_alg_list[102+OQS_KEMOID_CNT] = envval;
+   if ((envval = getenv("OQS_OID_CROSSRSDPG256SMALL"))) oqs_oid_alg_list[104+OQS_KEMOID_CNT] = envval;
 }///// OQS_TEMPLATE_FRAGMENT_OID_PATCHING_END
     return 1;
 }
@@ -400,6 +434,40 @@ int oqs_patch_encodings(void)
    if ((envval = getenv("OQS_ENCODING_RSA3072_SPHINCSSHAKE128FSIMPLE_ALGNAME"))) oqs_alg_encoding_list[95] = envval;
    if ((envval = getenv("OQS_ENCODING_CROSSRSDP128BALANCED"))) oqs_alg_encoding_list[96] = envval;
    if ((envval = getenv("OQS_ENCODING_CROSSRSDP128BALANCED_ALGNAME"))) oqs_alg_encoding_list[97] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDP128FAST"))) oqs_alg_encoding_list[98] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDP128FAST_ALGNAME"))) oqs_alg_encoding_list[99] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDP128SMALL"))) oqs_alg_encoding_list[100] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDP128SMALL_ALGNAME"))) oqs_alg_encoding_list[101] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDP192BALANCED"))) oqs_alg_encoding_list[102] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDP192BALANCED_ALGNAME"))) oqs_alg_encoding_list[103] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDP192FAST"))) oqs_alg_encoding_list[104] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDP192FAST_ALGNAME"))) oqs_alg_encoding_list[105] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDP192SMALL"))) oqs_alg_encoding_list[106] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDP192SMALL_ALGNAME"))) oqs_alg_encoding_list[107] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDP256BALANCED"))) oqs_alg_encoding_list[108] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDP256BALANCED_ALGNAME"))) oqs_alg_encoding_list[109] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDP256FAST"))) oqs_alg_encoding_list[110] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDP256FAST_ALGNAME"))) oqs_alg_encoding_list[111] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDP256SMALL"))) oqs_alg_encoding_list[112] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDP256SMALL_ALGNAME"))) oqs_alg_encoding_list[113] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDPG128BALANCED"))) oqs_alg_encoding_list[114] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDPG128BALANCED_ALGNAME"))) oqs_alg_encoding_list[115] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDPG128FAST"))) oqs_alg_encoding_list[116] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDPG128FAST_ALGNAME"))) oqs_alg_encoding_list[117] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDPG128SMALL"))) oqs_alg_encoding_list[118] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDPG128SMALL_ALGNAME"))) oqs_alg_encoding_list[119] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDPG192BALANCED"))) oqs_alg_encoding_list[120] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDPG192BALANCED_ALGNAME"))) oqs_alg_encoding_list[121] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDPG192FAST"))) oqs_alg_encoding_list[122] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDPG192FAST_ALGNAME"))) oqs_alg_encoding_list[123] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDPG192SMALL"))) oqs_alg_encoding_list[124] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDPG192SMALL_ALGNAME"))) oqs_alg_encoding_list[125] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDPG256BALANCED"))) oqs_alg_encoding_list[126] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDPG256BALANCED_ALGNAME"))) oqs_alg_encoding_list[127] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDPG256FAST"))) oqs_alg_encoding_list[128] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDPG256FAST_ALGNAME"))) oqs_alg_encoding_list[129] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDPG256SMALL"))) oqs_alg_encoding_list[130] = envval;
+   if ((envval = getenv("OQS_ENCODING_CROSSRSDPG256SMALL_ALGNAME"))) oqs_alg_encoding_list[131] = envval;
 }
 ///// OQS_TEMPLATE_FRAGMENT_ENCODING_PATCHING_END
     return 1;
@@ -522,7 +590,58 @@ static const OSSL_ALGORITHM oqsprovider_signatures[] = {
     SIGALG("rsa3072_sphincsshake128fsimple", 128, oqs_signature_functions),
 #endif
 #ifdef OQS_ENABLE_SIG_cross_rsdp_128_balanced
-    SIGALG("crossrsdp128balanced", 128, oqs_signature_functions),
+    SIGALG("CROSSrsdp128balanced", 128, oqs_signature_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdp_128_fast
+    SIGALG("CROSSrsdp128fast", 128, oqs_signature_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdp_128_small
+    SIGALG("CROSSrsdp128small", 128, oqs_signature_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdp_192_balanced
+    SIGALG("CROSSrsdp192balanced", 192, oqs_signature_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdp_192_fast
+    SIGALG("CROSSrsdp192fast", 192, oqs_signature_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdp_192_small
+    SIGALG("CROSSrsdp192small", 192, oqs_signature_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdp_256_balanced
+    SIGALG("CROSSrsdp256balanced", 256, oqs_signature_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdp_256_fast
+    SIGALG("CROSSrsdp256fast", 256, oqs_signature_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdp_256_small
+    SIGALG("CROSSrsdp256small", 256, oqs_signature_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdpg_128_balanced
+    SIGALG("CROSSrsdpg128balanced", 128, oqs_signature_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdpg_128_fast
+    SIGALG("CROSSrsdpg128fast", 128, oqs_signature_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdpg_128_small
+    SIGALG("CROSSrsdpg128small", 128, oqs_signature_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdpg_192_balanced
+    SIGALG("CROSSrsdpg192balanced", 192, oqs_signature_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdpg_192_fast
+    SIGALG("CROSSrsdpg192fast", 192, oqs_signature_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdpg_192_small
+    SIGALG("CROSSrsdpg192small", 192, oqs_signature_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdpg_256_balanced
+    SIGALG("CROSSrsdpg256balanced", 256, oqs_signature_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdpg_256_fast
+    SIGALG("CROSSrsdpg256fast", 256, oqs_signature_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdpg_256_small
+    SIGALG("CROSSrsdpg256small", 256, oqs_signature_functions),
 #endif
 ///// OQS_TEMPLATE_FRAGMENT_SIG_FUNCTIONS_END
     {NULL, NULL, NULL}};
@@ -705,7 +824,58 @@ static const OSSL_ALGORITHM oqsprovider_keymgmt[]
     SIGALG("rsa3072_sphincsshake128fsimple", 128, oqs_rsa3072_sphincsshake128fsimple_keymgmt_functions),
 #endif
 #ifdef OQS_ENABLE_SIG_cross_rsdp_128_balanced
-    SIGALG("crossrsdp128balanced", 128, oqs_crossrsdp128balanced_keymgmt_functions),
+    SIGALG("CROSSrsdp128balanced", 128, oqs_CROSSrsdp128balanced_keymgmt_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdp_128_fast
+    SIGALG("CROSSrsdp128fast", 128, oqs_CROSSrsdp128fast_keymgmt_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdp_128_small
+    SIGALG("CROSSrsdp128small", 128, oqs_CROSSrsdp128small_keymgmt_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdp_192_balanced
+    SIGALG("CROSSrsdp192balanced", 192, oqs_CROSSrsdp192balanced_keymgmt_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdp_192_fast
+    SIGALG("CROSSrsdp192fast", 192, oqs_CROSSrsdp192fast_keymgmt_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdp_192_small
+    SIGALG("CROSSrsdp192small", 192, oqs_CROSSrsdp192small_keymgmt_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdp_256_balanced
+    SIGALG("CROSSrsdp256balanced", 256, oqs_CROSSrsdp256balanced_keymgmt_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdp_256_fast
+    SIGALG("CROSSrsdp256fast", 256, oqs_CROSSrsdp256fast_keymgmt_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdp_256_small
+    SIGALG("CROSSrsdp256small", 256, oqs_CROSSrsdp256small_keymgmt_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdpg_128_balanced
+    SIGALG("CROSSrsdpg128balanced", 128, oqs_CROSSrsdpg128balanced_keymgmt_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdpg_128_fast
+    SIGALG("CROSSrsdpg128fast", 128, oqs_CROSSrsdpg128fast_keymgmt_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdpg_128_small
+    SIGALG("CROSSrsdpg128small", 128, oqs_CROSSrsdpg128small_keymgmt_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdpg_192_balanced
+    SIGALG("CROSSrsdpg192balanced", 192, oqs_CROSSrsdpg192balanced_keymgmt_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdpg_192_fast
+    SIGALG("CROSSrsdpg192fast", 192, oqs_CROSSrsdpg192fast_keymgmt_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdpg_192_small
+    SIGALG("CROSSrsdpg192small", 192, oqs_CROSSrsdpg192small_keymgmt_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdpg_256_balanced
+    SIGALG("CROSSrsdpg256balanced", 256, oqs_CROSSrsdpg256balanced_keymgmt_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdpg_256_fast
+    SIGALG("CROSSrsdpg256fast", 256, oqs_CROSSrsdpg256fast_keymgmt_functions),
+#endif
+#ifdef OQS_ENABLE_SIG_cross_rsdpg_256_small
+    SIGALG("CROSSrsdpg256small", 256, oqs_CROSSrsdpg256small_keymgmt_functions),
 #endif
 
 #ifdef OQS_ENABLE_KEM_frodokem_640_aes

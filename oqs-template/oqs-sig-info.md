@@ -1,6 +1,23 @@
 | Algorithm                                         | Implementation Version                        | NIST round   |   Claimed NIST Level | Code Point   | OID                      |
 |:--------------------------------------------------|:----------------------------------------------|:-------------|---------------------:|:-------------|:-------------------------|
-| crossrsdp128balanced                              | 2.1                                           | 3            |                    1 | 0xfeee       | 1.2.3.4.5.6.7.8.9.0      |
+| CROSSrsdp128balanced                              | 2.1                                           | 3            |                    1 | 0xfeee       | 0.0.0.0.0.0.0.0.0.1      |
+| CROSSrsdp128fast                                  | 2.1                                           | 3            |                    1 | 0xfeef       | 0.0.0.0.0.0.0.0.0.2      |
+| CROSSrsdp128small                                 | 2.1                                           | 3            |                    1 | 0xfef0       | 0.0.0.0.0.0.0.0.0.3      |
+| CROSSrsdp192balanced                              | 2.1                                           | 3            |                    3 | 0xfef1       | 0.0.0.0.0.0.0.0.0.4      |
+| CROSSrsdp192fast                                  | 2.1                                           | 3            |                    3 | 0xfef2       | 0.0.0.0.0.0.0.0.0.5      |
+| CROSSrsdp192small                                 | 2.1                                           | 3            |                    3 | 0xfef3       | 0.0.0.0.0.0.0.0.0.6      |
+| CROSSrsdp256balanced                              | 2.1                                           | 3            |                    5 | 0xfef4       | 0.0.0.0.0.0.0.0.0.7      |
+| CROSSrsdp256fast                                  | 2.1                                           | 3            |                    5 | 0xfef5       | 0.0.0.0.0.0.0.0.0.8      |
+| CROSSrsdp256small                                 | 2.1                                           | 3            |                    5 | 0xfef6       | 0.0.0.0.0.0.0.0.0.9      |
+| CROSSrsdpg128balanced                             | 2.1                                           | 3            |                    1 | 0xfef7       | 0.0.0.0.0.0.0.0.0.10     |
+| CROSSrsdpg128fast                                 | 2.1                                           | 3            |                    1 | 0xfef8       | 0.0.0.0.0.0.0.0.0.11     |
+| CROSSrsdpg128small                                | 2.1                                           | 3            |                    1 | 0xfef9       | 0.0.0.0.0.0.0.0.0.12     |
+| CROSSrsdpg192balanced                             | 2.1                                           | 3            |                    3 | 0xfefa       | 0.0.0.0.0.0.0.0.0.13     |
+| CROSSrsdpg192fast                                 | 2.1                                           | 3            |                    3 | 0xfefb       | 0.0.0.0.0.0.0.0.0.14     |
+| CROSSrsdpg192small                                | 2.1                                           | 3            |                    3 | 0xfefc       | 0.0.0.0.0.0.0.0.0.15     |
+| CROSSrsdpg256balanced                             | 2.1                                           | 3            |                    5 | 0xfefd       | 0.0.0.0.0.0.0.0.0.16     |
+| CROSSrsdpg256fast                                 | 2.1                                           | 3            |                    5 | 0xfefe       | 0.0.0.0.0.0.0.0.0.17     |
+| CROSSrsdpg256small                                | 2.1                                           | 3            |                    5 | 0xfeff       | 0.0.0.0.0.0.0.0.0.18     |
 | dilithium2                                        | 3.1                                           | 3            |                    2 | 0xfea0       | 1.3.6.1.4.1.2.267.7.4.4  |
 | dilithium2 **hybrid with** p256                   | 3.1                                           | 3            |                    2 | 0xfea1       | 1.3.9999.2.7.1           |
 | dilithium2 **hybrid with** rsa3072                | 3.1                                           | 3            |                    2 | 0xfea2       | 1.3.9999.2.7.2           |

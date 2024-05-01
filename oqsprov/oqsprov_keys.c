@@ -59,9 +59,9 @@ static int oqsx_key_recreate_classickey(OQSX_KEY *key, oqsx_key_op_t op);
 
 
 #ifdef OQS_KEM_ENCODERS
-#define NID_TABLE_LEN 102
+#define NID_TABLE_LEN 119
 #else
-#define NID_TABLE_LEN 49
+#define NID_TABLE_LEN 66
 #endif
 
 static oqs_nid_name_t nid_names[NID_TABLE_LEN] = {
@@ -170,7 +170,24 @@ static oqs_nid_name_t nid_names[NID_TABLE_LEN] = {
        { 0, "sphincsshake128fsimple", OQS_SIG_alg_sphincs_shake_128f_simple, KEY_TYPE_SIG, 128 },
        { 0, "p256_sphincsshake128fsimple", OQS_SIG_alg_sphincs_shake_128f_simple, KEY_TYPE_HYB_SIG, 128 },
        { 0, "rsa3072_sphincsshake128fsimple", OQS_SIG_alg_sphincs_shake_128f_simple, KEY_TYPE_HYB_SIG, 128 },
-       { 0, "crossrsdp128balanced", OQS_SIG_alg_cross_rsdp_128_balanced, KEY_TYPE_SIG, 128 },
+       { 0, "CROSSrsdp128balanced", OQS_SIG_alg_cross_rsdp_128_balanced, KEY_TYPE_SIG, 128 },
+       { 0, "CROSSrsdp128fast", OQS_SIG_alg_cross_rsdp_128_fast, KEY_TYPE_SIG, 128 },
+       { 0, "CROSSrsdp128small", OQS_SIG_alg_cross_rsdp_128_small, KEY_TYPE_SIG, 128 },
+       { 0, "CROSSrsdp192balanced", OQS_SIG_alg_cross_rsdp_192_balanced, KEY_TYPE_SIG, 192 },
+       { 0, "CROSSrsdp192fast", OQS_SIG_alg_cross_rsdp_192_fast, KEY_TYPE_SIG, 192 },
+       { 0, "CROSSrsdp192small", OQS_SIG_alg_cross_rsdp_192_small, KEY_TYPE_SIG, 192 },
+       { 0, "CROSSrsdp256balanced", OQS_SIG_alg_cross_rsdp_256_balanced, KEY_TYPE_SIG, 256 },
+       { 0, "CROSSrsdp256fast", OQS_SIG_alg_cross_rsdp_256_fast, KEY_TYPE_SIG, 256 },
+       { 0, "CROSSrsdp256small", OQS_SIG_alg_cross_rsdp_256_small, KEY_TYPE_SIG, 256 },
+       { 0, "CROSSrsdpg128balanced", OQS_SIG_alg_cross_rsdpg_128_balanced, KEY_TYPE_SIG, 128 },
+       { 0, "CROSSrsdpg128fast", OQS_SIG_alg_cross_rsdpg_128_fast, KEY_TYPE_SIG, 128 },
+       { 0, "CROSSrsdpg128small", OQS_SIG_alg_cross_rsdpg_128_small, KEY_TYPE_SIG, 128 },
+       { 0, "CROSSrsdpg192balanced", OQS_SIG_alg_cross_rsdpg_192_balanced, KEY_TYPE_SIG, 192 },
+       { 0, "CROSSrsdpg192fast", OQS_SIG_alg_cross_rsdpg_192_fast, KEY_TYPE_SIG, 192 },
+       { 0, "CROSSrsdpg192small", OQS_SIG_alg_cross_rsdpg_192_small, KEY_TYPE_SIG, 192 },
+       { 0, "CROSSrsdpg256balanced", OQS_SIG_alg_cross_rsdpg_256_balanced, KEY_TYPE_SIG, 256 },
+       { 0, "CROSSrsdpg256fast", OQS_SIG_alg_cross_rsdpg_256_fast, KEY_TYPE_SIG, 256 },
+       { 0, "CROSSrsdpg256small", OQS_SIG_alg_cross_rsdpg_256_small, KEY_TYPE_SIG, 256 },
 ///// OQS_TEMPLATE_FRAGMENT_OQSNAMES_END
 };
 

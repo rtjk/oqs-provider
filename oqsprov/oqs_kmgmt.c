@@ -1129,14 +1129,167 @@ static void *rsa3072_sphincsshake128fsimple_gen_init(void *provctx, int selectio
     return oqsx_gen_init(provctx, selection, OQS_SIG_alg_sphincs_shake_128f_simple, "rsa3072_sphincsshake128fsimple", KEY_TYPE_HYB_SIG, 128, 47);
 }
 
-static void *crossrsdp128balanced_new_key(void *provctx)
+static void *CROSSrsdp128balanced_new_key(void *provctx)
 {
-    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_cross_rsdp_128_balanced, "crossrsdp128balanced", KEY_TYPE_SIG, NULL, 128, 48);
+    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_cross_rsdp_128_balanced, "CROSSrsdp128balanced", KEY_TYPE_SIG, NULL, 128, 48);
 }
 
-static void *crossrsdp128balanced_gen_init(void *provctx, int selection)
+static void *CROSSrsdp128balanced_gen_init(void *provctx, int selection)
 {
-    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_cross_rsdp_128_balanced, "crossrsdp128balanced", 0, 128, 48);
+    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_cross_rsdp_128_balanced, "CROSSrsdp128balanced", 0, 128, 48);
+}
+static void *CROSSrsdp128fast_new_key(void *provctx)
+{
+    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_cross_rsdp_128_fast, "CROSSrsdp128fast", KEY_TYPE_SIG, NULL, 128, 49);
+}
+
+static void *CROSSrsdp128fast_gen_init(void *provctx, int selection)
+{
+    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_cross_rsdp_128_fast, "CROSSrsdp128fast", 0, 128, 49);
+}
+static void *CROSSrsdp128small_new_key(void *provctx)
+{
+    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_cross_rsdp_128_small, "CROSSrsdp128small", KEY_TYPE_SIG, NULL, 128, 50);
+}
+
+static void *CROSSrsdp128small_gen_init(void *provctx, int selection)
+{
+    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_cross_rsdp_128_small, "CROSSrsdp128small", 0, 128, 50);
+}
+static void *CROSSrsdp192balanced_new_key(void *provctx)
+{
+    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_cross_rsdp_192_balanced, "CROSSrsdp192balanced", KEY_TYPE_SIG, NULL, 192, 51);
+}
+
+static void *CROSSrsdp192balanced_gen_init(void *provctx, int selection)
+{
+    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_cross_rsdp_192_balanced, "CROSSrsdp192balanced", 0, 192, 51);
+}
+static void *CROSSrsdp192fast_new_key(void *provctx)
+{
+    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_cross_rsdp_192_fast, "CROSSrsdp192fast", KEY_TYPE_SIG, NULL, 192, 52);
+}
+
+static void *CROSSrsdp192fast_gen_init(void *provctx, int selection)
+{
+    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_cross_rsdp_192_fast, "CROSSrsdp192fast", 0, 192, 52);
+}
+static void *CROSSrsdp192small_new_key(void *provctx)
+{
+    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_cross_rsdp_192_small, "CROSSrsdp192small", KEY_TYPE_SIG, NULL, 192, 53);
+}
+
+static void *CROSSrsdp192small_gen_init(void *provctx, int selection)
+{
+    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_cross_rsdp_192_small, "CROSSrsdp192small", 0, 192, 53);
+}
+static void *CROSSrsdp256balanced_new_key(void *provctx)
+{
+    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_cross_rsdp_256_balanced, "CROSSrsdp256balanced", KEY_TYPE_SIG, NULL, 256, 54);
+}
+
+static void *CROSSrsdp256balanced_gen_init(void *provctx, int selection)
+{
+    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_cross_rsdp_256_balanced, "CROSSrsdp256balanced", 0, 256, 54);
+}
+static void *CROSSrsdp256fast_new_key(void *provctx)
+{
+    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_cross_rsdp_256_fast, "CROSSrsdp256fast", KEY_TYPE_SIG, NULL, 256, 55);
+}
+
+static void *CROSSrsdp256fast_gen_init(void *provctx, int selection)
+{
+    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_cross_rsdp_256_fast, "CROSSrsdp256fast", 0, 256, 55);
+}
+static void *CROSSrsdp256small_new_key(void *provctx)
+{
+    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_cross_rsdp_256_small, "CROSSrsdp256small", KEY_TYPE_SIG, NULL, 256, 56);
+}
+
+static void *CROSSrsdp256small_gen_init(void *provctx, int selection)
+{
+    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_cross_rsdp_256_small, "CROSSrsdp256small", 0, 256, 56);
+}
+static void *CROSSrsdpg128balanced_new_key(void *provctx)
+{
+    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_cross_rsdpg_128_balanced, "CROSSrsdpg128balanced", KEY_TYPE_SIG, NULL, 128, 57);
+}
+
+static void *CROSSrsdpg128balanced_gen_init(void *provctx, int selection)
+{
+    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_cross_rsdpg_128_balanced, "CROSSrsdpg128balanced", 0, 128, 57);
+}
+static void *CROSSrsdpg128fast_new_key(void *provctx)
+{
+    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_cross_rsdpg_128_fast, "CROSSrsdpg128fast", KEY_TYPE_SIG, NULL, 128, 58);
+}
+
+static void *CROSSrsdpg128fast_gen_init(void *provctx, int selection)
+{
+    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_cross_rsdpg_128_fast, "CROSSrsdpg128fast", 0, 128, 58);
+}
+static void *CROSSrsdpg128small_new_key(void *provctx)
+{
+    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_cross_rsdpg_128_small, "CROSSrsdpg128small", KEY_TYPE_SIG, NULL, 128, 59);
+}
+
+static void *CROSSrsdpg128small_gen_init(void *provctx, int selection)
+{
+    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_cross_rsdpg_128_small, "CROSSrsdpg128small", 0, 128, 59);
+}
+static void *CROSSrsdpg192balanced_new_key(void *provctx)
+{
+    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_cross_rsdpg_192_balanced, "CROSSrsdpg192balanced", KEY_TYPE_SIG, NULL, 192, 60);
+}
+
+static void *CROSSrsdpg192balanced_gen_init(void *provctx, int selection)
+{
+    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_cross_rsdpg_192_balanced, "CROSSrsdpg192balanced", 0, 192, 60);
+}
+static void *CROSSrsdpg192fast_new_key(void *provctx)
+{
+    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_cross_rsdpg_192_fast, "CROSSrsdpg192fast", KEY_TYPE_SIG, NULL, 192, 61);
+}
+
+static void *CROSSrsdpg192fast_gen_init(void *provctx, int selection)
+{
+    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_cross_rsdpg_192_fast, "CROSSrsdpg192fast", 0, 192, 61);
+}
+static void *CROSSrsdpg192small_new_key(void *provctx)
+{
+    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_cross_rsdpg_192_small, "CROSSrsdpg192small", KEY_TYPE_SIG, NULL, 192, 62);
+}
+
+static void *CROSSrsdpg192small_gen_init(void *provctx, int selection)
+{
+    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_cross_rsdpg_192_small, "CROSSrsdpg192small", 0, 192, 62);
+}
+static void *CROSSrsdpg256balanced_new_key(void *provctx)
+{
+    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_cross_rsdpg_256_balanced, "CROSSrsdpg256balanced", KEY_TYPE_SIG, NULL, 256, 63);
+}
+
+static void *CROSSrsdpg256balanced_gen_init(void *provctx, int selection)
+{
+    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_cross_rsdpg_256_balanced, "CROSSrsdpg256balanced", 0, 256, 63);
+}
+static void *CROSSrsdpg256fast_new_key(void *provctx)
+{
+    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_cross_rsdpg_256_fast, "CROSSrsdpg256fast", KEY_TYPE_SIG, NULL, 256, 64);
+}
+
+static void *CROSSrsdpg256fast_gen_init(void *provctx, int selection)
+{
+    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_cross_rsdpg_256_fast, "CROSSrsdpg256fast", 0, 256, 64);
+}
+static void *CROSSrsdpg256small_new_key(void *provctx)
+{
+    return oqsx_key_new(PROV_OQS_LIBCTX_OF(provctx), OQS_SIG_alg_cross_rsdpg_256_small, "CROSSrsdpg256small", KEY_TYPE_SIG, NULL, 256, 65);
+}
+
+static void *CROSSrsdpg256small_gen_init(void *provctx, int selection)
+{
+    return oqsx_gen_init(provctx, selection, OQS_SIG_alg_cross_rsdpg_256_small, "CROSSrsdpg256small", 0, 256, 65);
 }
 
 ///// OQS_TEMPLATE_FRAGMENT_KEYMGMT_CONSTRUCTORS_END
@@ -1336,7 +1489,24 @@ MAKE_SIG_KEYMGMT_FUNCTIONS(p384_sphincssha2192fsimple)
 MAKE_SIG_KEYMGMT_FUNCTIONS(sphincsshake128fsimple)
 MAKE_SIG_KEYMGMT_FUNCTIONS(p256_sphincsshake128fsimple)
 MAKE_SIG_KEYMGMT_FUNCTIONS(rsa3072_sphincsshake128fsimple)
-MAKE_SIG_KEYMGMT_FUNCTIONS(crossrsdp128balanced)
+MAKE_SIG_KEYMGMT_FUNCTIONS(CROSSrsdp128balanced)
+MAKE_SIG_KEYMGMT_FUNCTIONS(CROSSrsdp128fast)
+MAKE_SIG_KEYMGMT_FUNCTIONS(CROSSrsdp128small)
+MAKE_SIG_KEYMGMT_FUNCTIONS(CROSSrsdp192balanced)
+MAKE_SIG_KEYMGMT_FUNCTIONS(CROSSrsdp192fast)
+MAKE_SIG_KEYMGMT_FUNCTIONS(CROSSrsdp192small)
+MAKE_SIG_KEYMGMT_FUNCTIONS(CROSSrsdp256balanced)
+MAKE_SIG_KEYMGMT_FUNCTIONS(CROSSrsdp256fast)
+MAKE_SIG_KEYMGMT_FUNCTIONS(CROSSrsdp256small)
+MAKE_SIG_KEYMGMT_FUNCTIONS(CROSSrsdpg128balanced)
+MAKE_SIG_KEYMGMT_FUNCTIONS(CROSSrsdpg128fast)
+MAKE_SIG_KEYMGMT_FUNCTIONS(CROSSrsdpg128small)
+MAKE_SIG_KEYMGMT_FUNCTIONS(CROSSrsdpg192balanced)
+MAKE_SIG_KEYMGMT_FUNCTIONS(CROSSrsdpg192fast)
+MAKE_SIG_KEYMGMT_FUNCTIONS(CROSSrsdpg192small)
+MAKE_SIG_KEYMGMT_FUNCTIONS(CROSSrsdpg256balanced)
+MAKE_SIG_KEYMGMT_FUNCTIONS(CROSSrsdpg256fast)
+MAKE_SIG_KEYMGMT_FUNCTIONS(CROSSrsdpg256small)
 
 MAKE_KEM_KEYMGMT_FUNCTIONS(frodo640aes, OQS_KEM_alg_frodokem_640_aes, 128)
 
