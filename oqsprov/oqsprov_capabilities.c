@@ -296,7 +296,7 @@ static OQS_SIGALG_CONSTANTS oqs_sigalg_list[] = {
     {0xfef6, 128, TLS1_3_VERSION, 0}, {0xfef7, 128, TLS1_3_VERSION, 0},
     {0xfef8, 128, TLS1_3_VERSION, 0}, {0xfef9, 192, TLS1_3_VERSION, 0},
     {0xfefa, 192, TLS1_3_VERSION, 0}, {0xfefb, 192, TLS1_3_VERSION, 0},
-    {0xfefc, 256, TLS1_3_VERSION, 0}, {0xfefd, 256, TLS1_3_VERSION, 0},
+    {0xfefc, 256, TLS1_3_VERSION, 0}, {0xff07, 256, TLS1_3_VERSION, 0},
     {0xfefd, 256, TLS1_3_VERSION, 0}, {0xfefe, 128, TLS1_3_VERSION, 0},
     {0xfeff, 128, TLS1_3_VERSION, 0}, {0xff00, 128, TLS1_3_VERSION, 0},
     {0xff01, 192, TLS1_3_VERSION, 0}, {0xff02, 192, TLS1_3_VERSION, 0},

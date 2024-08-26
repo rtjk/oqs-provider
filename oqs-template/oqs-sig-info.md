@@ -7,7 +7,7 @@
 | CROSSrsdp192fast                                  | 1.2 + Keccak_x4 + PQClean fixes                 | 1            |                    3 | 0xfefa       | 1.3.6.1.4.1.62245.2.1.5  |
 | CROSSrsdp192small                                 | 1.2 + Keccak_x4 + PQClean fixes                 | 1            |                    3 | 0xfefb       | 1.3.6.1.4.1.62245.2.1.6  |
 | CROSSrsdp256balanced                              | 1.2 + Keccak_x4 + PQClean fixes                 | 1            |                    5 | 0xfefc       | 1.3.6.1.4.1.62245.2.1.7  |
-| CROSSrsdp256fast                                  | 1.2 + Keccak_x4 + PQClean fixes                 | 1            |                    5 | 0xfefd       | 1.3.6.1.4.1.62245.2.1.8  |
+| CROSSrsdp256fast                                  | 1.2 + Keccak_x4 + PQClean fixes                 | 1            |                    5 | 0xff07       | 1.3.6.1.4.1.62245.2.1.8  |
 | CROSSrsdp256small                                 | 1.2 + Keccak_x4 + PQClean fixes                 | 1            |                    5 | 0xfefd       | 1.3.6.1.4.1.62245.2.1.9  |
 | CROSSrsdpg128balanced                             | 1.2 + Keccak_x4 + PQClean fixes                 | 1            |                    1 | 0xfefe       | 1.3.6.1.4.1.62245.2.1.10 |
 | CROSSrsdpg128fast                                 | 1.2 + Keccak_x4 + PQClean fixes                 | 1            |                    1 | 0xfeff       | 1.3.6.1.4.1.62245.2.1.11 |
