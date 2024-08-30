@@ -287,21 +287,30 @@ static OQS_SIGALG_CONSTANTS oqs_sigalg_list[] = {
     {0xfeb4, 128, TLS1_3_VERSION, 0}, {0xfeb5, 128, TLS1_3_VERSION, 0},
     {0xfeb6, 128, TLS1_3_VERSION, 0}, {0xfeb7, 128, TLS1_3_VERSION, 0},
     {0xfeb8, 128, TLS1_3_VERSION, 0}, {0xfeb9, 192, TLS1_3_VERSION, 0},
-    {0xfeba, 192, TLS1_3_VERSION, 0}, {0xfec2, 128, TLS1_3_VERSION, 0},
+    {0xfeba, 192, TLS1_3_VERSION, 0}, {0xfebb, 192, TLS1_3_VERSION, 0},
+    {0xfebc, 192, TLS1_3_VERSION, 0}, {0xfebd, 256, TLS1_3_VERSION, 0},
+    {0xfebe, 256, TLS1_3_VERSION, 0}, {0xfec0, 256, TLS1_3_VERSION, 0},
+    {0xfec1, 256, TLS1_3_VERSION, 0}, {0xfec2, 128, TLS1_3_VERSION, 0},
     {0xfec3, 128, TLS1_3_VERSION, 0}, {0xfec4, 128, TLS1_3_VERSION, 0},
-    {0xfeee, 128, TLS1_3_VERSION, 0}, {0xfef2, 128, TLS1_3_VERSION, 0},
-    {0xfeef, 128, TLS1_3_VERSION, 0}, {0xfef3, 128, TLS1_3_VERSION, 0},
-    {0xfef0, 192, TLS1_3_VERSION, 0}, {0xfef4, 192, TLS1_3_VERSION, 0},
-    {0xfef1, 256, TLS1_3_VERSION, 0}, {0xfef5, 256, TLS1_3_VERSION, 0},
-    {0xfef6, 128, TLS1_3_VERSION, 0}, {0xfef7, 128, TLS1_3_VERSION, 0},
-    {0xfef8, 128, TLS1_3_VERSION, 0}, {0xfef9, 192, TLS1_3_VERSION, 0},
-    {0xfefa, 192, TLS1_3_VERSION, 0}, {0xfefb, 192, TLS1_3_VERSION, 0},
-    {0xfefc, 256, TLS1_3_VERSION, 0}, {0xff07, 256, TLS1_3_VERSION, 0},
-    {0xfefd, 256, TLS1_3_VERSION, 0}, {0xfefe, 128, TLS1_3_VERSION, 0},
-    {0xfeff, 128, TLS1_3_VERSION, 0}, {0xff00, 128, TLS1_3_VERSION, 0},
-    {0xff01, 192, TLS1_3_VERSION, 0}, {0xff02, 192, TLS1_3_VERSION, 0},
-    {0xff03, 192, TLS1_3_VERSION, 0}, {0xff04, 256, TLS1_3_VERSION, 0},
-    {0xff05, 256, TLS1_3_VERSION, 0}, {0xff06, 256, TLS1_3_VERSION, 0},
+    {0xfec5, 128, TLS1_3_VERSION, 0}, {0xfec6, 128, TLS1_3_VERSION, 0},
+    {0xfec7, 128, TLS1_3_VERSION, 0}, {0xfec8, 192, TLS1_3_VERSION, 0},
+    {0xfec9, 192, TLS1_3_VERSION, 0}, {0xfeca, 192, TLS1_3_VERSION, 0},
+    {0xfecb, 192, TLS1_3_VERSION, 0}, {0xfecc, 256, TLS1_3_VERSION, 0},
+    {0xfecd, 256, TLS1_3_VERSION, 0}, {0xfece, 256, TLS1_3_VERSION, 0},
+    {0xfecf, 256, TLS1_3_VERSION, 0}, {0xfeee, 128, TLS1_3_VERSION, 0},
+    {0xfef2, 128, TLS1_3_VERSION, 0}, {0xfeef, 128, TLS1_3_VERSION, 0},
+    {0xfef3, 128, TLS1_3_VERSION, 0}, {0xfef0, 192, TLS1_3_VERSION, 0},
+    {0xfef4, 192, TLS1_3_VERSION, 0}, {0xfef1, 256, TLS1_3_VERSION, 0},
+    {0xfef5, 256, TLS1_3_VERSION, 0}, {0xfef6, 128, TLS1_3_VERSION, 0},
+    {0xfef7, 128, TLS1_3_VERSION, 0}, {0xfef8, 128, TLS1_3_VERSION, 0},
+    {0xfef9, 192, TLS1_3_VERSION, 0}, {0xfefa, 192, TLS1_3_VERSION, 0},
+    {0xfefb, 192, TLS1_3_VERSION, 0}, {0xfefc, 256, TLS1_3_VERSION, 0},
+    {0xff07, 256, TLS1_3_VERSION, 0}, {0xfefd, 256, TLS1_3_VERSION, 0},
+    {0xfefe, 128, TLS1_3_VERSION, 0}, {0xfeff, 128, TLS1_3_VERSION, 0},
+    {0xff00, 128, TLS1_3_VERSION, 0}, {0xff01, 192, TLS1_3_VERSION, 0},
+    {0xff02, 192, TLS1_3_VERSION, 0}, {0xff03, 192, TLS1_3_VERSION, 0},
+    {0xff04, 256, TLS1_3_VERSION, 0}, {0xff05, 256, TLS1_3_VERSION, 0},
+    {0xff06, 256, TLS1_3_VERSION, 0},
     ///// OQS_TEMPLATE_FRAGMENT_SIGALG_ASSIGNMENTS_END
 };
 
@@ -577,88 +586,139 @@ int oqs_patch_codepoints() {
     if (getenv("OQS_CODEPOINT_P384_SPHINCSSHA2192FSIMPLE"))
         oqs_sigalg_list[44].code_point =
             atoi(getenv("OQS_CODEPOINT_P384_SPHINCSSHA2192FSIMPLE"));
-    if (getenv("OQS_CODEPOINT_SPHINCSSHAKE128FSIMPLE"))
+    if (getenv("OQS_CODEPOINT_SPHINCSSHA2192SSIMPLE"))
         oqs_sigalg_list[45].code_point =
+            atoi(getenv("OQS_CODEPOINT_SPHINCSSHA2192SSIMPLE"));
+    if (getenv("OQS_CODEPOINT_P384_SPHINCSSHA2192SSIMPLE"))
+        oqs_sigalg_list[46].code_point =
+            atoi(getenv("OQS_CODEPOINT_P384_SPHINCSSHA2192SSIMPLE"));
+    if (getenv("OQS_CODEPOINT_SPHINCSSHA2256FSIMPLE"))
+        oqs_sigalg_list[47].code_point =
+            atoi(getenv("OQS_CODEPOINT_SPHINCSSHA2256FSIMPLE"));
+    if (getenv("OQS_CODEPOINT_P521_SPHINCSSHA2256FSIMPLE"))
+        oqs_sigalg_list[48].code_point =
+            atoi(getenv("OQS_CODEPOINT_P521_SPHINCSSHA2256FSIMPLE"));
+    if (getenv("OQS_CODEPOINT_SPHINCSSHA2256SSIMPLE"))
+        oqs_sigalg_list[49].code_point =
+            atoi(getenv("OQS_CODEPOINT_SPHINCSSHA2256SSIMPLE"));
+    if (getenv("OQS_CODEPOINT_P521_SPHINCSSHA2256SSIMPLE"))
+        oqs_sigalg_list[50].code_point =
+            atoi(getenv("OQS_CODEPOINT_P521_SPHINCSSHA2256SSIMPLE"));
+    if (getenv("OQS_CODEPOINT_SPHINCSSHAKE128FSIMPLE"))
+        oqs_sigalg_list[51].code_point =
             atoi(getenv("OQS_CODEPOINT_SPHINCSSHAKE128FSIMPLE"));
     if (getenv("OQS_CODEPOINT_P256_SPHINCSSHAKE128FSIMPLE"))
-        oqs_sigalg_list[46].code_point =
+        oqs_sigalg_list[52].code_point =
             atoi(getenv("OQS_CODEPOINT_P256_SPHINCSSHAKE128FSIMPLE"));
     if (getenv("OQS_CODEPOINT_RSA3072_SPHINCSSHAKE128FSIMPLE"))
-        oqs_sigalg_list[47].code_point =
+        oqs_sigalg_list[53].code_point =
             atoi(getenv("OQS_CODEPOINT_RSA3072_SPHINCSSHAKE128FSIMPLE"));
+    if (getenv("OQS_CODEPOINT_SPHINCSSHAKE128SSIMPLE"))
+        oqs_sigalg_list[54].code_point =
+            atoi(getenv("OQS_CODEPOINT_SPHINCSSHAKE128SSIMPLE"));
+    if (getenv("OQS_CODEPOINT_P256_SPHINCSSHAKE128SSIMPLE"))
+        oqs_sigalg_list[55].code_point =
+            atoi(getenv("OQS_CODEPOINT_P256_SPHINCSSHAKE128SSIMPLE"));
+    if (getenv("OQS_CODEPOINT_RSA3072_SPHINCSSHAKE128SSIMPLE"))
+        oqs_sigalg_list[56].code_point =
+            atoi(getenv("OQS_CODEPOINT_RSA3072_SPHINCSSHAKE128SSIMPLE"));
+    if (getenv("OQS_CODEPOINT_SPHINCSSHAKE192FSIMPLE"))
+        oqs_sigalg_list[57].code_point =
+            atoi(getenv("OQS_CODEPOINT_SPHINCSSHAKE192FSIMPLE"));
+    if (getenv("OQS_CODEPOINT_P384_SPHINCSSHAKE192FSIMPLE"))
+        oqs_sigalg_list[58].code_point =
+            atoi(getenv("OQS_CODEPOINT_P384_SPHINCSSHAKE192FSIMPLE"));
+    if (getenv("OQS_CODEPOINT_SPHINCSSHAKE192SSIMPLE"))
+        oqs_sigalg_list[59].code_point =
+            atoi(getenv("OQS_CODEPOINT_SPHINCSSHAKE192SSIMPLE"));
+    if (getenv("OQS_CODEPOINT_P384_SPHINCSSHAKE192SSIMPLE"))
+        oqs_sigalg_list[60].code_point =
+            atoi(getenv("OQS_CODEPOINT_P384_SPHINCSSHAKE192SSIMPLE"));
+    if (getenv("OQS_CODEPOINT_SPHINCSSHAKE256FSIMPLE"))
+        oqs_sigalg_list[61].code_point =
+            atoi(getenv("OQS_CODEPOINT_SPHINCSSHAKE256FSIMPLE"));
+    if (getenv("OQS_CODEPOINT_P521_SPHINCSSHAKE256FSIMPLE"))
+        oqs_sigalg_list[62].code_point =
+            atoi(getenv("OQS_CODEPOINT_P521_SPHINCSSHAKE256FSIMPLE"));
+    if (getenv("OQS_CODEPOINT_SPHINCSSHAKE256SSIMPLE"))
+        oqs_sigalg_list[63].code_point =
+            atoi(getenv("OQS_CODEPOINT_SPHINCSSHAKE256SSIMPLE"));
+    if (getenv("OQS_CODEPOINT_P521_SPHINCSSHAKE256SSIMPLE"))
+        oqs_sigalg_list[64].code_point =
+            atoi(getenv("OQS_CODEPOINT_P521_SPHINCSSHAKE256SSIMPLE"));
     if (getenv("OQS_CODEPOINT_MAYO1"))
-        oqs_sigalg_list[48].code_point = atoi(getenv("OQS_CODEPOINT_MAYO1"));
+        oqs_sigalg_list[65].code_point = atoi(getenv("OQS_CODEPOINT_MAYO1"));
     if (getenv("OQS_CODEPOINT_P256_MAYO1"))
-        oqs_sigalg_list[49].code_point =
+        oqs_sigalg_list[66].code_point =
             atoi(getenv("OQS_CODEPOINT_P256_MAYO1"));
     if (getenv("OQS_CODEPOINT_MAYO2"))
-        oqs_sigalg_list[50].code_point = atoi(getenv("OQS_CODEPOINT_MAYO2"));
+        oqs_sigalg_list[67].code_point = atoi(getenv("OQS_CODEPOINT_MAYO2"));
     if (getenv("OQS_CODEPOINT_P256_MAYO2"))
-        oqs_sigalg_list[51].code_point =
+        oqs_sigalg_list[68].code_point =
             atoi(getenv("OQS_CODEPOINT_P256_MAYO2"));
     if (getenv("OQS_CODEPOINT_MAYO3"))
-        oqs_sigalg_list[52].code_point = atoi(getenv("OQS_CODEPOINT_MAYO3"));
+        oqs_sigalg_list[69].code_point = atoi(getenv("OQS_CODEPOINT_MAYO3"));
     if (getenv("OQS_CODEPOINT_P384_MAYO3"))
-        oqs_sigalg_list[53].code_point =
+        oqs_sigalg_list[70].code_point =
             atoi(getenv("OQS_CODEPOINT_P384_MAYO3"));
     if (getenv("OQS_CODEPOINT_MAYO5"))
-        oqs_sigalg_list[54].code_point = atoi(getenv("OQS_CODEPOINT_MAYO5"));
+        oqs_sigalg_list[71].code_point = atoi(getenv("OQS_CODEPOINT_MAYO5"));
     if (getenv("OQS_CODEPOINT_P521_MAYO5"))
-        oqs_sigalg_list[55].code_point =
+        oqs_sigalg_list[72].code_point =
             atoi(getenv("OQS_CODEPOINT_P521_MAYO5"));
     if (getenv("OQS_CODEPOINT_CROSSRSDP128BALANCED"))
-        oqs_sigalg_list[56].code_point =
+        oqs_sigalg_list[73].code_point =
             atoi(getenv("OQS_CODEPOINT_CROSSRSDP128BALANCED"));
     if (getenv("OQS_CODEPOINT_CROSSRSDP128FAST"))
-        oqs_sigalg_list[57].code_point =
+        oqs_sigalg_list[74].code_point =
             atoi(getenv("OQS_CODEPOINT_CROSSRSDP128FAST"));
     if (getenv("OQS_CODEPOINT_CROSSRSDP128SMALL"))
-        oqs_sigalg_list[58].code_point =
+        oqs_sigalg_list[75].code_point =
             atoi(getenv("OQS_CODEPOINT_CROSSRSDP128SMALL"));
     if (getenv("OQS_CODEPOINT_CROSSRSDP192BALANCED"))
-        oqs_sigalg_list[59].code_point =
+        oqs_sigalg_list[76].code_point =
             atoi(getenv("OQS_CODEPOINT_CROSSRSDP192BALANCED"));
     if (getenv("OQS_CODEPOINT_CROSSRSDP192FAST"))
-        oqs_sigalg_list[60].code_point =
+        oqs_sigalg_list[77].code_point =
             atoi(getenv("OQS_CODEPOINT_CROSSRSDP192FAST"));
     if (getenv("OQS_CODEPOINT_CROSSRSDP192SMALL"))
-        oqs_sigalg_list[61].code_point =
+        oqs_sigalg_list[78].code_point =
             atoi(getenv("OQS_CODEPOINT_CROSSRSDP192SMALL"));
     if (getenv("OQS_CODEPOINT_CROSSRSDP256BALANCED"))
-        oqs_sigalg_list[62].code_point =
+        oqs_sigalg_list[79].code_point =
             atoi(getenv("OQS_CODEPOINT_CROSSRSDP256BALANCED"));
     if (getenv("OQS_CODEPOINT_CROSSRSDP256FAST"))
-        oqs_sigalg_list[63].code_point =
+        oqs_sigalg_list[80].code_point =
             atoi(getenv("OQS_CODEPOINT_CROSSRSDP256FAST"));
     if (getenv("OQS_CODEPOINT_CROSSRSDP256SMALL"))
-        oqs_sigalg_list[64].code_point =
+        oqs_sigalg_list[81].code_point =
             atoi(getenv("OQS_CODEPOINT_CROSSRSDP256SMALL"));
     if (getenv("OQS_CODEPOINT_CROSSRSDPG128BALANCED"))
-        oqs_sigalg_list[65].code_point =
+        oqs_sigalg_list[82].code_point =
             atoi(getenv("OQS_CODEPOINT_CROSSRSDPG128BALANCED"));
     if (getenv("OQS_CODEPOINT_CROSSRSDPG128FAST"))
-        oqs_sigalg_list[66].code_point =
+        oqs_sigalg_list[83].code_point =
             atoi(getenv("OQS_CODEPOINT_CROSSRSDPG128FAST"));
     if (getenv("OQS_CODEPOINT_CROSSRSDPG128SMALL"))
-        oqs_sigalg_list[67].code_point =
+        oqs_sigalg_list[84].code_point =
             atoi(getenv("OQS_CODEPOINT_CROSSRSDPG128SMALL"));
     if (getenv("OQS_CODEPOINT_CROSSRSDPG192BALANCED"))
-        oqs_sigalg_list[68].code_point =
+        oqs_sigalg_list[85].code_point =
             atoi(getenv("OQS_CODEPOINT_CROSSRSDPG192BALANCED"));
     if (getenv("OQS_CODEPOINT_CROSSRSDPG192FAST"))
-        oqs_sigalg_list[69].code_point =
+        oqs_sigalg_list[86].code_point =
             atoi(getenv("OQS_CODEPOINT_CROSSRSDPG192FAST"));
     if (getenv("OQS_CODEPOINT_CROSSRSDPG192SMALL"))
-        oqs_sigalg_list[70].code_point =
+        oqs_sigalg_list[87].code_point =
             atoi(getenv("OQS_CODEPOINT_CROSSRSDPG192SMALL"));
     if (getenv("OQS_CODEPOINT_CROSSRSDPG256BALANCED"))
-        oqs_sigalg_list[71].code_point =
+        oqs_sigalg_list[88].code_point =
             atoi(getenv("OQS_CODEPOINT_CROSSRSDPG256BALANCED"));
     if (getenv("OQS_CODEPOINT_CROSSRSDPG256FAST"))
-        oqs_sigalg_list[72].code_point =
+        oqs_sigalg_list[89].code_point =
             atoi(getenv("OQS_CODEPOINT_CROSSRSDPG256FAST"));
     if (getenv("OQS_CODEPOINT_CROSSRSDPG256SMALL"))
-        oqs_sigalg_list[73].code_point =
+        oqs_sigalg_list[90].code_point =
             atoi(getenv("OQS_CODEPOINT_CROSSRSDPG256SMALL"));
     ///// OQS_TEMPLATE_FRAGMENT_CODEPOINT_PATCHING_END
     return 1;
@@ -810,102 +870,153 @@ static const OSSL_PARAM oqs_param_sigalg_list[][12] = {
     OQS_SIGALG_ENTRY(p384_sphincssha2192fsimple, p384_sphincssha2192fsimple,
                      p384_sphincssha2192fsimple, "1.3.9999.6.5.11", 44),
 #endif
+#ifdef OQS_ENABLE_SIG_sphincs_sha2_192s_simple
+    OQS_SIGALG_ENTRY(sphincssha2192ssimple, sphincssha2192ssimple,
+                     sphincssha2192ssimple, "1.3.9999.6.5.12", 45),
+    OQS_SIGALG_ENTRY(p384_sphincssha2192ssimple, p384_sphincssha2192ssimple,
+                     p384_sphincssha2192ssimple, "1.3.9999.6.5.13", 46),
+#endif
+#ifdef OQS_ENABLE_SIG_sphincs_sha2_256f_simple
+    OQS_SIGALG_ENTRY(sphincssha2256fsimple, sphincssha2256fsimple,
+                     sphincssha2256fsimple, "1.3.9999.6.6.10", 47),
+    OQS_SIGALG_ENTRY(p521_sphincssha2256fsimple, p521_sphincssha2256fsimple,
+                     p521_sphincssha2256fsimple, "1.3.9999.6.6.11", 48),
+#endif
+#ifdef OQS_ENABLE_SIG_sphincs_sha2_256s_simple
+    OQS_SIGALG_ENTRY(sphincssha2256ssimple, sphincssha2256ssimple,
+                     sphincssha2256ssimple, "1.3.9999.6.6.12", 49),
+    OQS_SIGALG_ENTRY(p521_sphincssha2256ssimple, p521_sphincssha2256ssimple,
+                     p521_sphincssha2256ssimple, "1.3.9999.6.6.13", 50),
+#endif
 #ifdef OQS_ENABLE_SIG_sphincs_shake_128f_simple
     OQS_SIGALG_ENTRY(sphincsshake128fsimple, sphincsshake128fsimple,
-                     sphincsshake128fsimple, "1.3.9999.6.7.13", 45),
+                     sphincsshake128fsimple, "1.3.9999.6.7.13", 51),
     OQS_SIGALG_ENTRY(p256_sphincsshake128fsimple, p256_sphincsshake128fsimple,
-                     p256_sphincsshake128fsimple, "1.3.9999.6.7.14", 46),
+                     p256_sphincsshake128fsimple, "1.3.9999.6.7.14", 52),
     OQS_SIGALG_ENTRY(rsa3072_sphincsshake128fsimple,
                      rsa3072_sphincsshake128fsimple,
-                     rsa3072_sphincsshake128fsimple, "1.3.9999.6.7.15", 47),
+                     rsa3072_sphincsshake128fsimple, "1.3.9999.6.7.15", 53),
+#endif
+#ifdef OQS_ENABLE_SIG_sphincs_shake_128s_simple
+    OQS_SIGALG_ENTRY(sphincsshake128ssimple, sphincsshake128ssimple,
+                     sphincsshake128ssimple, "1.3.9999.6.7.16", 54),
+    OQS_SIGALG_ENTRY(p256_sphincsshake128ssimple, p256_sphincsshake128ssimple,
+                     p256_sphincsshake128ssimple, "1.3.9999.6.7.17", 55),
+    OQS_SIGALG_ENTRY(rsa3072_sphincsshake128ssimple,
+                     rsa3072_sphincsshake128ssimple,
+                     rsa3072_sphincsshake128ssimple, "1.3.9999.6.7.18", 56),
+#endif
+#ifdef OQS_ENABLE_SIG_sphincs_shake_192f_simple
+    OQS_SIGALG_ENTRY(sphincsshake192fsimple, sphincsshake192fsimple,
+                     sphincsshake192fsimple, "1.3.9999.6.8.10", 57),
+    OQS_SIGALG_ENTRY(p384_sphincsshake192fsimple, p384_sphincsshake192fsimple,
+                     p384_sphincsshake192fsimple, "1.3.9999.6.8.11", 58),
+#endif
+#ifdef OQS_ENABLE_SIG_sphincs_shake_192s_simple
+    OQS_SIGALG_ENTRY(sphincsshake192ssimple, sphincsshake192ssimple,
+                     sphincsshake192ssimple, "1.3.9999.6.8.12", 59),
+    OQS_SIGALG_ENTRY(p384_sphincsshake192ssimple, p384_sphincsshake192ssimple,
+                     p384_sphincsshake192ssimple, "1.3.9999.6.8.13", 60),
+#endif
+#ifdef OQS_ENABLE_SIG_sphincs_shake_256f_simple
+    OQS_SIGALG_ENTRY(sphincsshake256fsimple, sphincsshake256fsimple,
+                     sphincsshake256fsimple, "1.3.9999.6.9.10", 61),
+    OQS_SIGALG_ENTRY(p521_sphincsshake256fsimple, p521_sphincsshake256fsimple,
+                     p521_sphincsshake256fsimple, "1.3.9999.6.9.11", 62),
+#endif
+#ifdef OQS_ENABLE_SIG_sphincs_shake_256s_simple
+    OQS_SIGALG_ENTRY(sphincsshake256ssimple, sphincsshake256ssimple,
+                     sphincsshake256ssimple, "1.3.9999.6.9.12", 63),
+    OQS_SIGALG_ENTRY(p521_sphincsshake256ssimple, p521_sphincsshake256ssimple,
+                     p521_sphincsshake256ssimple, "1.3.9999.6.9.13", 64),
 #endif
 #ifdef OQS_ENABLE_SIG_mayo_1
-    OQS_SIGALG_ENTRY(mayo1, mayo1, mayo1, "1.3.9999.8.1.1", 48),
-    OQS_SIGALG_ENTRY(p256_mayo1, p256_mayo1, p256_mayo1, "1.3.9999.8.1.2", 49),
+    OQS_SIGALG_ENTRY(mayo1, mayo1, mayo1, "1.3.9999.8.1.1", 65),
+    OQS_SIGALG_ENTRY(p256_mayo1, p256_mayo1, p256_mayo1, "1.3.9999.8.1.2", 66),
 #endif
 #ifdef OQS_ENABLE_SIG_mayo_2
-    OQS_SIGALG_ENTRY(mayo2, mayo2, mayo2, "1.3.9999.8.2.1", 50),
-    OQS_SIGALG_ENTRY(p256_mayo2, p256_mayo2, p256_mayo2, "1.3.9999.8.2.2", 51),
+    OQS_SIGALG_ENTRY(mayo2, mayo2, mayo2, "1.3.9999.8.2.1", 67),
+    OQS_SIGALG_ENTRY(p256_mayo2, p256_mayo2, p256_mayo2, "1.3.9999.8.2.2", 68),
 #endif
 #ifdef OQS_ENABLE_SIG_mayo_3
-    OQS_SIGALG_ENTRY(mayo3, mayo3, mayo3, "1.3.9999.8.3.1", 52),
-    OQS_SIGALG_ENTRY(p384_mayo3, p384_mayo3, p384_mayo3, "1.3.9999.8.3.2", 53),
+    OQS_SIGALG_ENTRY(mayo3, mayo3, mayo3, "1.3.9999.8.3.1", 69),
+    OQS_SIGALG_ENTRY(p384_mayo3, p384_mayo3, p384_mayo3, "1.3.9999.8.3.2", 70),
 #endif
 #ifdef OQS_ENABLE_SIG_mayo_5
-    OQS_SIGALG_ENTRY(mayo5, mayo5, mayo5, "1.3.9999.8.5.1", 54),
-    OQS_SIGALG_ENTRY(p521_mayo5, p521_mayo5, p521_mayo5, "1.3.9999.8.5.2", 55),
+    OQS_SIGALG_ENTRY(mayo5, mayo5, mayo5, "1.3.9999.8.5.1", 71),
+    OQS_SIGALG_ENTRY(p521_mayo5, p521_mayo5, p521_mayo5, "1.3.9999.8.5.2", 72),
 #endif
 #ifdef OQS_ENABLE_SIG_cross_rsdp_128_balanced
     OQS_SIGALG_ENTRY(CROSSrsdp128balanced, CROSSrsdp128balanced,
-                     CROSSrsdp128balanced, "1.3.6.1.4.1.62245.2.1.1", 56),
+                     CROSSrsdp128balanced, "1.3.6.1.4.1.62245.2.1.1", 73),
 #endif
 #ifdef OQS_ENABLE_SIG_cross_rsdp_128_fast
     OQS_SIGALG_ENTRY(CROSSrsdp128fast, CROSSrsdp128fast, CROSSrsdp128fast,
-                     "1.3.6.1.4.1.62245.2.1.2", 57),
+                     "1.3.6.1.4.1.62245.2.1.2", 74),
 #endif
 #ifdef OQS_ENABLE_SIG_cross_rsdp_128_small
     OQS_SIGALG_ENTRY(CROSSrsdp128small, CROSSrsdp128small, CROSSrsdp128small,
-                     "1.3.6.1.4.1.62245.2.1.3", 58),
+                     "1.3.6.1.4.1.62245.2.1.3", 75),
 #endif
 #ifdef OQS_ENABLE_SIG_cross_rsdp_192_balanced
     OQS_SIGALG_ENTRY(CROSSrsdp192balanced, CROSSrsdp192balanced,
-                     CROSSrsdp192balanced, "1.3.6.1.4.1.62245.2.1.4", 59),
+                     CROSSrsdp192balanced, "1.3.6.1.4.1.62245.2.1.4", 76),
 #endif
 #ifdef OQS_ENABLE_SIG_cross_rsdp_192_fast
     OQS_SIGALG_ENTRY(CROSSrsdp192fast, CROSSrsdp192fast, CROSSrsdp192fast,
-                     "1.3.6.1.4.1.62245.2.1.5", 60),
+                     "1.3.6.1.4.1.62245.2.1.5", 77),
 #endif
 #ifdef OQS_ENABLE_SIG_cross_rsdp_192_small
     OQS_SIGALG_ENTRY(CROSSrsdp192small, CROSSrsdp192small, CROSSrsdp192small,
-                     "1.3.6.1.4.1.62245.2.1.6", 61),
+                     "1.3.6.1.4.1.62245.2.1.6", 78),
 #endif
 #ifdef OQS_ENABLE_SIG_cross_rsdp_256_balanced
     OQS_SIGALG_ENTRY(CROSSrsdp256balanced, CROSSrsdp256balanced,
-                     CROSSrsdp256balanced, "1.3.6.1.4.1.62245.2.1.7", 62),
+                     CROSSrsdp256balanced, "1.3.6.1.4.1.62245.2.1.7", 79),
 #endif
 #ifdef OQS_ENABLE_SIG_cross_rsdp_256_fast
     OQS_SIGALG_ENTRY(CROSSrsdp256fast, CROSSrsdp256fast, CROSSrsdp256fast,
-                     "1.3.6.1.4.1.62245.2.1.8", 63),
+                     "1.3.6.1.4.1.62245.2.1.8", 80),
 #endif
 #ifdef OQS_ENABLE_SIG_cross_rsdp_256_small
     OQS_SIGALG_ENTRY(CROSSrsdp256small, CROSSrsdp256small, CROSSrsdp256small,
-                     "1.3.6.1.4.1.62245.2.1.9", 64),
+                     "1.3.6.1.4.1.62245.2.1.9", 81),
 #endif
 #ifdef OQS_ENABLE_SIG_cross_rsdpg_128_balanced
     OQS_SIGALG_ENTRY(CROSSrsdpg128balanced, CROSSrsdpg128balanced,
-                     CROSSrsdpg128balanced, "1.3.6.1.4.1.62245.2.1.10", 65),
+                     CROSSrsdpg128balanced, "1.3.6.1.4.1.62245.2.1.10", 82),
 #endif
 #ifdef OQS_ENABLE_SIG_cross_rsdpg_128_fast
     OQS_SIGALG_ENTRY(CROSSrsdpg128fast, CROSSrsdpg128fast, CROSSrsdpg128fast,
-                     "1.3.6.1.4.1.62245.2.1.11", 66),
+                     "1.3.6.1.4.1.62245.2.1.11", 83),
 #endif
 #ifdef OQS_ENABLE_SIG_cross_rsdpg_128_small
     OQS_SIGALG_ENTRY(CROSSrsdpg128small, CROSSrsdpg128small, CROSSrsdpg128small,
-                     "1.3.6.1.4.1.62245.2.1.12", 67),
+                     "1.3.6.1.4.1.62245.2.1.12", 84),
 #endif
 #ifdef OQS_ENABLE_SIG_cross_rsdpg_192_balanced
     OQS_SIGALG_ENTRY(CROSSrsdpg192balanced, CROSSrsdpg192balanced,
-                     CROSSrsdpg192balanced, "1.3.6.1.4.1.62245.2.1.13", 68),
+                     CROSSrsdpg192balanced, "1.3.6.1.4.1.62245.2.1.13", 85),
 #endif
 #ifdef OQS_ENABLE_SIG_cross_rsdpg_192_fast
     OQS_SIGALG_ENTRY(CROSSrsdpg192fast, CROSSrsdpg192fast, CROSSrsdpg192fast,
-                     "1.3.6.1.4.1.62245.2.1.14", 69),
+                     "1.3.6.1.4.1.62245.2.1.14", 86),
 #endif
 #ifdef OQS_ENABLE_SIG_cross_rsdpg_192_small
     OQS_SIGALG_ENTRY(CROSSrsdpg192small, CROSSrsdpg192small, CROSSrsdpg192small,
-                     "1.3.6.1.4.1.62245.2.1.15", 70),
+                     "1.3.6.1.4.1.62245.2.1.15", 87),
 #endif
 #ifdef OQS_ENABLE_SIG_cross_rsdpg_256_balanced
     OQS_SIGALG_ENTRY(CROSSrsdpg256balanced, CROSSrsdpg256balanced,
-                     CROSSrsdpg256balanced, "1.3.6.1.4.1.62245.2.1.16", 71),
+                     CROSSrsdpg256balanced, "1.3.6.1.4.1.62245.2.1.16", 88),
 #endif
 #ifdef OQS_ENABLE_SIG_cross_rsdpg_256_fast
     OQS_SIGALG_ENTRY(CROSSrsdpg256fast, CROSSrsdpg256fast, CROSSrsdpg256fast,
-                     "1.3.6.1.4.1.62245.2.1.17", 72),
+                     "1.3.6.1.4.1.62245.2.1.17", 89),
 #endif
 #ifdef OQS_ENABLE_SIG_cross_rsdpg_256_small
     OQS_SIGALG_ENTRY(CROSSrsdpg256small, CROSSrsdpg256small, CROSSrsdpg256small,
-                     "1.3.6.1.4.1.62245.2.1.18", 73),
+                     "1.3.6.1.4.1.62245.2.1.18", 90),
 #endif
     ///// OQS_TEMPLATE_FRAGMENT_SIGALG_NAMES_END
 };
